@@ -5,7 +5,7 @@
 
 
 ## Visual Demonstration
-- Linux Kernel Character Device `ScullBuffer`  (figures taken from the LDD Book - see References)
+Linux Kernel Character Device `ScullBuffer`  (figures taken from the LDD Book - see References)
 | User-Kernel Space Memory Mapping | Circular Scull Buffer |
 | --- | --- |
 | ![](./memmap.PNG) | ![](./scullbuffer1.png) |
