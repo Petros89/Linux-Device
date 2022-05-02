@@ -2,7 +2,7 @@
  * main.c -- the bare scull char module
  *
  * This code is based on the scullpipe code from LDD book.
- *         Anand Tripathi March 2022
+ *         Petros Apostolou - March 2022
  *
  * The source code in this file can be freely used, adapted,
  * and redistributed in source or binary form, so long as an
