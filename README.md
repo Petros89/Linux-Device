@@ -3,7 +3,7 @@ Development of a `Linux Character Device` using concurrent programming to thread
 
 | User Space - Kernel Space Memory Mapping | Circular Scull Buffer |
 | --- | --- |
-| ![](./memmap.PNG) | ![](./scullbuffer.PNG) |
+| ![](./memmap.PNG) | ![](./scullbuffer.png) |
 
 
 
