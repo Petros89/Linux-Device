@@ -168,7 +168,6 @@ Before running the testcases make sure to set permission on /dev/scullbuffer as 
 	--------------
 	The source code in this repository can be freely used, adapted, and redistributed in source or binary form, so long as an acknowledgment appears in derived 	    source files. This acknowledges that part of the source code inpired and inheritted from the book "Linux Device Drivers" by Alessandro Rubini and Jonathan 		Corbet, published by O'Reilly & Associates. No warranty is attached; we cannot take responsibility for errors or fitness for use.
 	
-	## Contact Information:
-	------------------------
-	Author Name: Petros Apostolou
-	Email: apost035@umn.edu, trs.apostolou@gmail.com
+	## Contact:
+	-----------
+	Petros Apostolou - apost035@umn.edu, trs.apostolou@gmail.com
