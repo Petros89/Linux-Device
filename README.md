@@ -4,18 +4,19 @@
 - Development of a `Linux Character Device` using concurrent programming to thread stream buffers on kernel memory. The buffers are streamed in the kernel memory using kernel threads in the form of a producer (writer) - consumer (reader) problem. That is, the writer threads are generating a given length buffer in the kernel memory that is available to be populated from a producer process in the user process. The producer process communicates using shared memmory segments with another user space process - consumer that consumes (reads) the already generated buffer utilizing reader kernel threads organized in the linux kernel device. For the coordination of the writer - reader kernel threads basic linux synchronization primitives are used including semaphore and mutex locks. Further optimization can be achieved by turning on the `WQ_FLAG_EXCLUSIVE` flag in order to make sure to free only 1 thread to consume 1 exactly resource at a time. This option works well for specific type of problems when a single process/thread is sufficient to completely serve the resource once it becomes available. However, for typical linux device applications this option is turned off and instead the standard `wake up` is used to release all the processes from the waiting queue at once.
 
 
-## Demonstration of Linux `ScullBuffer` Kernel Character Device (figures taken from the LDD Book - see References)
+## Visual Demonstration
+- Linux Kernel Character Device `ScullBuffer`  (figures taken from the LDD Book - see References)
 | User-Kernel Space Memory Mapping | Circular Scull Buffer |
 | --- | --- |
 | ![](./memmap.PNG) | ![](./scullbuffer1.png) |
 
 
 
-## Compilation Instructions:
+## Compilation Instructions
 - Just run `make` to create the scullbuffer.ko and the producer/consumer programs.
 
 
-## Running Instructions:
+## Running Instructions
 - Make sure that the device is unloaded or the device with same name doesn't exist. Type `sudo ./scull_unload`.
 
 - Load the scull buffer using command `sudo ./scull_load`. This will create a device called /dev/scullbuffer.
@@ -27,7 +28,7 @@
 - Type `make` command to compile all relevant files.
 
 	
-## Output Format:
+## Output Format
 - The producers each write the item they have produced into their respective log files. 
 
 - The log file of a producer has the following format: Prod<third-arg>.log where the <third-arg> is the parameter passed to the producer which is the name of
@@ -36,10 +37,10 @@
 - The consumers each write the item they have consumed into their respective log files. The log file of a consumer has the following format: Cons<second-arg>.log
    where <second-arg> is the parameter passed to the consumer program which is an id entifier for a consumer. This argument must be unique per consumer.
 
-## Test Case Description:
+## Test Case Description
 - Before running the testcases make sure to set permission on /dev/scullbuffer as sudo chmod 777 /dev/scullbuffer.
 
-1. 	Testcase #1: 
+        Testcase #1: 
 	-------------
         sudo ./scull_load nitems=50
 
@@ -62,7 +63,7 @@
         Log files: Prod_ITEM.log, Cons_ITEM.log 
 	
 
-2. 	Testcase #2: 
+	Testcase #2: 
 	-------------
         sudo ./scull_load nitems=50
 
@@ -86,7 +87,7 @@
         Log files: Prod_SOME.log, Cons_SOME.log 
 
 	
-3.	Testcase #3:
+	Testcase #3:
 	-------------
         sudo ./scull_load nitems=100
 
@@ -113,7 +114,7 @@
 	Consumer consumes a maximum of 50 produced items and does not consume anything after this point.
 
 
-4.	Testcase #4:
+	Testcase #4:
 	-------------
         sudo ./scull_load nitems=200
 
@@ -140,7 +141,7 @@
         -----------
 	Consumer consumes a maximum of 100 produced items and does not consume anything after this point.
 
-5.	Testcase #5:
+	Testcase #5:
 	------------
 	This test consists of one producer and two consumers. The producer will produce 50 items and the two consumers together (or individuall) will consume the 50           items.
 
@@ -166,8 +167,10 @@
 	Producer produces 100 GREEN items from which [0 - 25] are read by consumer 1 [26 - 49] are read by consumer 2
 	
 	
-	## References:
-	- The source code in this repository can be freely used, adapted, and redistributed in source or binary form, so long as an acknowledgment appears in derived 	    source files. This acknowledges that part of the source code inpired and inheritted from the book "Linux Device Drivers" by Alessandro Rubini and Jonathan 		Corbet, published by O'Reilly & Associates. No warranty is attached; we cannot take responsibility for errors or fitness for use.
+	## References
+	- The source code in this repository can be freely used, adapted, and redistributed in source or binary form, so long as an acknowledgment appears in derived
+	source files. This acknowledges that part of the source code inpired and inheritted from the book "Linux Device Drivers" by Alessandro Rubini and Jonathan
+	Corbet, published by O'Reilly & Associates. No warranty is attached; we cannot take responsibility for errors or fitness for use.
 	
-	## Contact:
+	## Contact
 	- Petros Apostolou - apost035@umn.edu, trs.apostolou@gmail.com
