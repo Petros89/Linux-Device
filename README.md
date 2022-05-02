@@ -1,6 +1,9 @@
 # LinuxDevice
 Development of a `Linux Character Device` using concurrent programming to thread stream buffers on kernel memory. The buffers are streamed in the kernel memory using kernel threads in the form of a producer (writer) - consumer (reader) problem. That is, the writer threads are generating a given length buffer in the kernel memory that is available to be populated from a producer process in the user process. The producer process communicates using shared memmory segments with another user space process - consumer that consumes (reads) the already generated buffer utilizing reader kernel threads organized in the linux kernel device. For the coordination of the writer - reader kernel threads basic linux synchronization primitives are used including semaphore and mutex locks. Further optimization can be achieved by turning on the `WQ_FLAG_EXCLUSIVE` flag in order to make sure to free only 1 thread to consume 1 exactly resource at a time. This option works well for specific type of problems when a single process/thread is sufficient to completely serve the resource once it becomes available. However, for typical linux device applications this option is turned off and instead the standard `wake up` is used to release all the processes from the waiting queue at once.
 
+| User Space - Kernel Space Memory Mapping | Circular Scull Buffer |
+| --- | --- |
+| ![](./memmap.PNG) | ![](./scullbuffer.PNG) |
 
 
 
