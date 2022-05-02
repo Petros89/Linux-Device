@@ -5,7 +5,7 @@ Development of a `Linux Character Device` using concurrent programming to thread
 ## Demonstration of Linux `ScullBuffer` Kernel Character Device (figures taken from the LDD Book - see References)
 | User-Kernel Space Memory Mapping | Circular Scull Buffer |
 | --- | --- |
-| ![](./memmap.PNG) | ![](./scullbuffer.png) |
+| ![](./memmap.PNG) | ![](./scullbuffer1.png) |
 
 
 
