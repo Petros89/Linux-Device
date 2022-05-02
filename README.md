@@ -50,7 +50,7 @@ Before running the testcases make sure to set permission on /dev/scullbuffer as 
    
 	Running instructions: 
 	----------------------
-        Open two terminals and navigate to "scullbuffer-xsme-s22-csci5103-01" directory where all the source files are located
+        Open two terminals and navigate to "scullbuffe" directory where all the source files are located
         Terminal1: ./producer 50 ITEM > TCASE1.out
 	Terminal2: ./consumer 50 ITEM >> TCASE1.out 
 
@@ -74,7 +74,7 @@ Before running the testcases make sure to set permission on /dev/scullbuffer as 
    
 	Running Instructions:
 	----------------------
-        Open two terminals and navigate to "scullbuffer-xsme-s22-csci5103-01" directory where all the source files are located
+        Open two terminals and navigate to "scullbuffer" directory where all the source files are located
         Terminal1: ./producer 50 SOME > TCASE2.out
 	Terminal2: ./consumer 50 SOME >> TCASE2.out 
 
@@ -96,7 +96,7 @@ Before running the testcases make sure to set permission on /dev/scullbuffer as 
 
 	Running Instructions:
 	----------------------
-        Open two terminals and navigate to "scullbuffer-xsme-s22-csci5103-01" directory where all the source files are located
+        Open two terminals and navigate to "scullbuffer" directory where all the source files are located
         Terminal1: ./producer 50 BLACK > TCASE3.out
 	Terminal2: ./consumer 100 BLACK >> TCASE3.out 
 
@@ -124,7 +124,7 @@ Before running the testcases make sure to set permission on /dev/scullbuffer as 
 
 	Running Instructions:
 	----------------------
-        Open three terminals and navigate to "scullbuffer-xsme-s22-csci5103-01" directory where all the source files are located
+        Open three terminals and navigate to "scullbuffer" directory where all the source files are located
         Terminal1: ./producer 50 RED1_ > TCASE4.out
 	Terminal2: ./producer 50 RED2_ >> TCASE4.out
 	Terminal2: ./consumer 200 RED >> TCASE4.out 
@@ -149,7 +149,7 @@ Before running the testcases make sure to set permission on /dev/scullbuffer as 
 
 	Running Instructions:
 	---------------------
-        Open three terminals and navigate to "scullbuffer-xsme-s22-csci5103-01" directory where all the source files are located
+        Open three terminals and navigate to "scullbuffer" directory where all the source files are located
         Terminal1: ./producer 50 GREEN > TCASE5.out
 	Terminal2: ./consumer 25 GR1_ >> TCASE5.out
 	Terminal2: ./consumer 25 GR2_ >> TCASE5.out 
