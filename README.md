@@ -12,37 +12,32 @@
 
 
 ## Compilation Instructions:
----------------------------
-Just run `make` to create the scullbuffer.ko and the producer/consumer programs.
+- Just run `make` to create the scullbuffer.ko and the producer/consumer programs.
 
 
 ## Running Instructions:
------------------------
-1. Make sure that the device is unloaded or the device with same name doesn't exist. Type `sudo ./scull_unload`.
+- Make sure that the device is unloaded or the device with same name doesn't exist. Type `sudo ./scull_unload`.
 
-2. Load the scull buffer using command `sudo ./scull_load`. This will create a device called /dev/scullbuffer.
+- Load the scull buffer using command `sudo ./scull_load`. This will create a device called /dev/scullbuffer.
 
-3. Change permissions on this device typing `sudo chmod 777 /dev/scullbuffer`.
+- Change permissions on this device typing `sudo chmod 777 /dev/scullbuffer`.
 
-4. In case the number of items have to be specified by the user then type `sudo ./scull_load nitems=<nitems>`
+- In case the number of items have to be specified by the user then type `sudo ./scull_load nitems=<nitems>`
 
-5. Type `make` command to compile all relevant files.
+- Type `make` command to compile all relevant files.
 
 	
 ## Output Format:
-----------------
+- The producers each write the item they have produced into their respective log files. 
 
-1. The producers each write the item they have produced into their respective log files. 
-
-2. The log file of a producer has the following format: Prod<third-arg>.log where the <third-arg> is the parameter passed to the producer which is the name of
+- The log file of a producer has the following format: Prod<third-arg>.log where the <third-arg> is the parameter passed to the producer which is the name of
    item that a particular producer will produce. For example: if producer writes items called "blue" then its output would be in file Prodblue.log.
 
-3. The consumers each write the item they have consumed into their respective log files. The log file of a consumer has the following format: Cons<second-arg>.log
+- The consumers each write the item they have consumed into their respective log files. The log file of a consumer has the following format: Cons<second-arg>.log
    where <second-arg> is the parameter passed to the consumer program which is an id entifier for a consumer. This argument must be unique per consumer.
 
 ## Test Case Description:
-------------------------
-Before running the testcases make sure to set permission on /dev/scullbuffer as sudo chmod 777 /dev/scullbuffer.
+- Before running the testcases make sure to set permission on /dev/scullbuffer as sudo chmod 777 /dev/scullbuffer.
 
 1. 	Testcase #1: 
 	-------------
@@ -172,9 +167,7 @@ Before running the testcases make sure to set permission on /dev/scullbuffer as 
 	
 	
 	## References:
-	--------------
-	The source code in this repository can be freely used, adapted, and redistributed in source or binary form, so long as an acknowledgment appears in derived 	    source files. This acknowledges that part of the source code inpired and inheritted from the book "Linux Device Drivers" by Alessandro Rubini and Jonathan 		Corbet, published by O'Reilly & Associates. No warranty is attached; we cannot take responsibility for errors or fitness for use.
+	- The source code in this repository can be freely used, adapted, and redistributed in source or binary form, so long as an acknowledgment appears in derived 	    source files. This acknowledges that part of the source code inpired and inheritted from the book "Linux Device Drivers" by Alessandro Rubini and Jonathan 		Corbet, published by O'Reilly & Associates. No warranty is attached; we cannot take responsibility for errors or fitness for use.
 	
 	## Contact:
-	-----------
-	Petros Apostolou - apost035@umn.edu, trs.apostolou@gmail.com
+	- Petros Apostolou - apost035@umn.edu, trs.apostolou@gmail.com
